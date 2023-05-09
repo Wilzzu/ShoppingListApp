@@ -1,8 +1,9 @@
-// Header.tsx
+// Header
 
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
+// Create interface for props
 interface Props {
   title: string;
 }
@@ -10,6 +11,7 @@ interface Props {
 const Header: React.FC<Props> = ({title}) => {
   return (
     <View style={styles.header}>
+      {/* Header text */}
       <Text style={styles.headerText}>{title}</Text>
     </View>
   );

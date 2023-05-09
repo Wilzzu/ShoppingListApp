@@ -1,19 +1,26 @@
+// Single item information
+
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
+// Create interface for props
 interface Props {
+  id: string;
   item: string;
   quantity: string;
+  removeItem(id: string): any;
 }
 
-const ListItem: React.FC<Props> = ({item, quantity}) => {
+const ListItem: React.FC<Props> = ({id, item, quantity, removeItem}) => {
   return (
     <View style={styles.itemContainer}>
+      {/* Item quantity and name container*/}
       <View style={styles.itemInfo}>
         <Text style={styles.quantityBlock}>{quantity + 'x'}</Text>
         <Text style={styles.itemName}>{item}</Text>
       </View>
-      <TouchableOpacity style={styles.removeBtn}>
+      {/* Delete button */}
+      <TouchableOpacity style={styles.removeBtn} onPress={() => removeItem(id)}>
         <Text>X</Text>
       </TouchableOpacity>
     </View>
