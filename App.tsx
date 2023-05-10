@@ -31,7 +31,6 @@ function App(): JSX.Element {
     try {
       const json = JSON.stringify(data);
       await AsyncStorage.setItem('@shoppingList', json);
-      console.log(json);
     } catch (e) {
       console.log(e);
     }
@@ -52,6 +51,7 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
       <Header title="Shopping List App"></Header>
+      {/* Main content */}
       <View style={styles.contentWrapper}>
         {/* Item form */}
         <AddItem
