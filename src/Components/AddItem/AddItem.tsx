@@ -53,13 +53,14 @@ const AddItem: React.FC<Props> = ({
         ...shoppingList,
         {id: uuid.v4().toString(), item, quantity: quantity || '1'},
       ];
+
       setShoppingList(newEntry);
       setLocalData(newEntry);
-    }
 
-    // Clear input fields
-    setItem('');
-    setQuantity('');
+      // Clear input fields
+      setItem('');
+      setQuantity('');
+    }
   };
 
   return (

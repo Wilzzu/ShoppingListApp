@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
 // Create interface for props
 interface Props {
@@ -21,7 +22,7 @@ const ListItem: React.FC<Props> = ({id, item, quantity, removeItem}) => {
       </View>
       {/* Delete button */}
       <TouchableOpacity style={styles.removeBtn} onPress={() => removeItem(id)}>
-        <Text>X</Text>
+        <Icon name="trash-2" size={24} color="#eb8634" />
       </TouchableOpacity>
     </View>
   );
@@ -46,11 +47,10 @@ const styles = StyleSheet.create({
     borderRadius: 2,
   },
   removeBtn: {
-    paddingVertical: 3,
-    paddingHorizontal: 8,
+    padding: 4,
     backgroundColor: '#DCDBD7',
     borderWidth: 2,
-    borderRadius: 4,
+    borderRadius: 10,
     borderColor: '#BEBDB9',
   },
 });
